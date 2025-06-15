@@ -1,0 +1,8 @@
+face_attendance/
+├── app.py                   # Main Flask application
+├── templates/
+│   └── index.html           # Web interface
+├── static/
+│   └── style.css            # Basic CSS styling
+├── known_faces/             # Directory for known face images (e.g.,Yuvan.jpg)
+├── log.csv                  # Automatically generated log file

@@ -1,0 +1,109 @@
+# 📘 Face Recognition Attendance System – Documentation
+
+## 📝 Overview
+
+The **Face Recognition Attendance System** is a web-based application that uses real-time webcam input or image upload to recognize individuals and log their attendance automatically. 
+It uses facial recognition technology to ensure accurate, contactless, and secure logging of check-ins and check-outs.
+
+---
+
+## ⚙️ Features
+
+* ✅ Face recognition using image upload or live webcam feed
+* ✅ Check-in and Check-out with timestamp
+* ✅ CSV-based attendance logging
+* ✅ Web interface built with Flask
+* ✅ Easy extensibility for organizations or academic institutions
+* ✅ No internet or cloud dependency – runs fully offline
+
+---
+
+## 🧰 Tech Stack
+
+| Component        | Technology                 |
+| ---------------- | -------------------------- |
+| Backend          | Python 3, Flask            |
+| Face Recognition | `face_recognition`, Dlib   |
+| Frontend         | HTML, CSS (static styling) |
+| Camera Input     | OpenCV (`cv2`)             |
+| Data Storage     | CSV (`pandas`)             |
+
+---
+
+---
+
+## 🚀 Setup Instructions
+
+### 1. **Clone or Download the Repository**
+
+```bash
+git clone https://github.com/yuvanedvin/face-attendance-system.git
+cd face-attendance-system
+```
+
+### 2. **Install Dependencies**
+
+Ensure you have Python 3.7+ installed. Then install required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+If `requirements.txt` is not available, manually install:
+
+```bash
+pip install flask face_recognition opencv-python pandas
+```
+
+### 3. **Add Known Faces**
+
+Place JPEG, JPG or PNG images of known individuals inside the `known_faces/` directory.
+
+* **Important**: Rename each image to the name of the person (e.g., `Yuvan.jpg`, `Vishnu.png`).
+
+### 4. **Run the App**
+
+```bash
+python app.py
+```
+
+### 5. **Access the Interface**
+
+Open your browser and go to:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 👤 How It Works
+
+1. **User Uploads a Photo** or clicks **Use Webcam**.
+2. The system scans the face(s) in the image or frame.
+3. Matches are performed with known face encodings.
+4. If a match is found:
+
+   * If previous status is "Check-Out" or no entry: it logs "Check-In".
+   * If previous status is "Check-In": it logs "Check-Out".
+5. Result is displayed, and the log is saved in `attendance.csv`.
+
+---
+
+## 📊 Output Example – `attendance.csv`
+
+| Name  | Status    | Time                |
+| ----- | --------- | ------------------- |
+| Yuvan | Check-In  | 2025-06-15 10:03:00 |
+| Yuvan | Check-Out | 2025-06-15 12:50:21 |
+
+---
+
+🛡️ Limitations
+
+1. Only one face is logged at a time.
+
+2. Webcam must be available and accessible for real time image scanning.
+
+3. Lighting and image clarity affect recognition accuracy.
+
