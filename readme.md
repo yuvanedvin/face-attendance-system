@@ -99,10 +99,3 @@ Each entry in `log.csv`:
 * Check-in/check-out logic is time-based.
 
 ---
-
-
-
----
-
-Let me know if you'd like a version that includes screenshots, badges, or links to a live demo. I can also help with writing the `requirements.txt`, adding a logo, or publishing it to GitHub.
-```
